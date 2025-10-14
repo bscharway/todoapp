@@ -1,4 +1,5 @@
 import InlineComponent from "./components/InlineComponent";
+import OutLineComponent from "./components/OutLineComponent";
 import Todo from "./components/Todo";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       {/*<Todo/>*/}
       <InlineComponent/>
+      <OutLineComponent/>
     </>
   );
 }
