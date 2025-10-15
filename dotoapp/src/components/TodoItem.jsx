@@ -1,11 +1,16 @@
 import styles from "./todoitem.module.css";
-export default function Item({ item }) {
+export default function Item({ item, todos, setTodos }) {
+  function handleDelete(item){
+    console.log("delete button clicked for item:", item);
+    setTodos(todos.filter((todo)=>todo!==item))
+    
+  }
   return (
     <div className={styles.item}>
       <div className={styles.itemName}>
         {item}
         <span>
-          <button className={styles.deleteButton}>x</button>
+          <button onClick={()=>handleDelete(item)} className={styles.deleteButton}>x</button>
         </span>
       </div>
       ;
