@@ -11,7 +11,7 @@ export default function Todo() {
     <>
       <Form todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
-      <Footer completedTodos={completedTodos} todos={todos}/>
+      <Footer completedTodos={completedTodos} totalTodos={todos.length}/>
     </>
   );
 }

@@ -1,9 +1,9 @@
 import styles from "./footer.module.css";
-export default function Footer({ completedTodos, todos }) {
+export default function Footer({ completedTodos, totalTodos }) {
   return (
     <div className={styles.footer}>
       <span className={styles.item}>
-        {completedTodos} completed out of {todos.length}
+        {completedTodos} completed out of {totalTodos}
       </span>
     </div>
   );
