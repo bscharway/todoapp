@@ -1,16 +1,30 @@
 import styles from "./todoitem.module.css";
 export default function Item({ item, todos, setTodos }) {
-  function handleDelete(item){
+  function handleDelete(item) {
     console.log("delete button clicked for item:", item);
-    setTodos(todos.filter((todo)=>todo!==item))
-    
+    setTodos(todos.filter((todo) => todo !== item));
   }
+  
+  function handleClick(name){
+   const newArray = todos.map((todo)=>
+      todo.name === name ? {...todo, done: !todo.done} : todo
+    );
+    setTodos(newArray)
+  }
+
+  const className = item.done ? styles.completed: "";
   return (
     <div className={styles.item}>
       <div className={styles.itemName}>
-        {item}
+        <span className={className} onClick={()=> handleClick(item.name)}>{item.name}</span>
+
         <span>
-          <button onClick={()=>handleDelete(item)} className={styles.deleteButton}>x</button>
+          <button
+            onClick={() => handleDelete(item)}
+            className={styles.deleteButton}
+          >
+            x
+          </button>
         </span>
       </div>
       ;
